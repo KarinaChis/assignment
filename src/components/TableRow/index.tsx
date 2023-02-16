@@ -37,6 +37,7 @@ const TableRow: FC<TableRowProps> = (props) => {
         isHeader ? ( 
             <tr className={"container header"}>
                 <td className="cell"></td>
+                <td className="cell"></td>
                 <td className="cell">NAME</td>
                 <td className="cell">DATE OF BIRTH</td>
                 <td className="cell">CITY</td>
@@ -45,6 +46,7 @@ const TableRow: FC<TableRowProps> = (props) => {
             </tr> 
         ) : (
             <tr className="container">
+                <td>{id}</td>
                 <td className="cell">
                     <img src={avatar} className="image" />
                 </td>
