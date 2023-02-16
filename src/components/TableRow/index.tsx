@@ -29,9 +29,11 @@ const TableRow: FC<TableRowProps> = (props) => {
         handleRemove,
         isHeader
     } = props as any;
+    const getTwoNumbers = (number:number) => number < 10? `0${number}` : number;
+    
     const dateFormatter = (date: string) => {
         const dateFormat = new Date(date);
-        return `${dateFormat.getDate()}/${dateFormat.getMonth() + 1}/${dateFormat.getFullYear()}`;
+        return `${getTwoNumbers(dateFormat.getDate())}/${getTwoNumbers(dateFormat.getMonth() + 1)}/${dateFormat.getFullYear()}`;
     }
     return (
         isHeader ? ( 
