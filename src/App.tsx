@@ -20,8 +20,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Attendees (123)</h1>
-      <TableContainer rows={users}/>
+      <h1>Attendees ({users.length})</h1>
+      <TableContainer rows={users} setUsers={setUsers}/>
     </div>
   );
 }

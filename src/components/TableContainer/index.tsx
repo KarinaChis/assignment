@@ -3,21 +3,25 @@ import TableRow, { RowProps } from '../TableRow/index.tsx';
 
 interface TableContainerProps {
     rows: RowProps[];
+    setUsers(rows): void;
 };
 
 const TableContainer: FC<TableContainerProps> = ({
-    rows
+    rows,
+    setUsers
 }) => {
-    const [rerender, setRerender] = useState(false);
-
+    const [renderRows, setRenderRows] = useState(rows)
     const handleRemove = (id) => {
-        rows = rows.filter(row => row.id !== id);
-        console.log('rows', rows)
+        setRenderRows(renderRows.filter(row => row.id !== id))
     }
 
     useEffect(() => {
-        setRerender(!rerender);
+        setRenderRows(rows);
     }, [rows])
+
+    useEffect(() => {
+        setUsers(renderRows);
+    }, [renderRows])
 
     return(
         <table>
@@ -26,7 +30,7 @@ const TableContainer: FC<TableContainerProps> = ({
             </thead>
             <tbody>
             {
-                rows.map(tableRow => (<TableRow {...tableRow} handleRemove={handleRemove} key={tableRow.id}/>))
+                renderRows.map(tableRow => (<TableRow {...tableRow} handleRemove={handleRemove} key={tableRow.id}/>))
             }
             </tbody>
         </table>

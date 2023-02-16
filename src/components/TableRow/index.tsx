@@ -46,7 +46,7 @@ const TableRow: FC<TableRowProps> = (props) => {
             </tr> 
         ) : (
             <tr className="container">
-                <td>{id}</td>
+                <td>#{id}</td>
                 <td className="cell">
                     <img src={avatar} className="image" />
                 </td>
