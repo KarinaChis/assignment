@@ -20,6 +20,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Attendees (123)</h1>
       <TableContainer rows={users}/>
     </div>
   );
