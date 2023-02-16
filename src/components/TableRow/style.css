@@ -1,0 +1,17 @@
+.cell{
+    padding: 12px 0;
+    border-width: 0;
+}
+.header{
+    background-color: #C8CDD9;
+    border-width: 0;
+    padding: 0;
+
+}
+.image{
+    border-radius: 25px;
+    height: 32px;
+}
+.container{
+    width: 100vw;
+}
